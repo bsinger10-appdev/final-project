@@ -1,0 +1,70 @@
+<h1>
+  Ecommerce review #<%= @ecommerce_review.id %> details
+</h1>
+
+<a href="/ecommerce_reviews/<%= @ecommerce_review.id %>/edit">
+  Edit ecommerce review
+</a>
+
+<hr>
+
+<dl>
+  <dt>
+    Site name
+  </dt>
+  <dd>
+    <%= @ecommerce_review.site_name %>
+  </dd>
+
+  <dt>
+    Product number
+  </dt>
+  <dd>
+    <%= @ecommerce_review.product_number %>
+  </dd>
+
+  <dt>
+    Review date
+  </dt>
+  <dd>
+    <%= @ecommerce_review.review_date %>
+  </dd>
+
+  <dt>
+    Review rating
+  </dt>
+  <dd>
+    <%= @ecommerce_review.review_rating %>
+  </dd>
+
+  <dt>
+    Review text
+  </dt>
+  <dd>
+    <%= @ecommerce_review.review_text %>
+  </dd>
+
+  <dt>
+    Created at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@ecommerce_review.created_at) %> ago
+  </dd>
+
+  <dt>
+    Updated at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@ecommerce_review.updated_at) %> ago
+  </dd>
+</dl>
+
+<a href="/delete_ecommerce_review/<%= @ecommerce_review.id %>">
+  Delete ecommerce review
+</a>
+
+<hr>
+
+<a href="/ecommerce_reviews">
+  Go back
+</a>

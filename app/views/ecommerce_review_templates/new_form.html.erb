@@ -1,0 +1,73 @@
+<!-- Validation failure messages -->
+<% if @ecommerce_review.present? %>
+  <% if @ecommerce_review.errors.any? %>
+    <% @ecommerce_review.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new ecommerce review
+</h1>
+
+<hr>
+
+<form action="/create_ecommerce_review" method="post">
+  <!-- Label and input for site_name -->
+  <div class="form-group">
+    <label for="site_name">
+      Site name
+    </label>
+
+    <input type="text" id="site_name" name="site_name" class="form-control" value="<%= @ecommerce_review.try(:site_name) %>">
+  </div>
+  
+    <!-- Label and input for product_number -->
+  <div class="form-group">
+    <label for="product_number">
+      Product number
+    </label>
+
+    <input type="text" id="product_number" name="product_number" class="form-control" value="<%= @ecommerce_review.try(:product_number) %>">
+  </div>
+
+  <!-- Label and input for review_date -->
+  <div class="form-group">
+    <label for="review_date">
+      Review date
+    </label>
+
+    <input type="text" id="review_date" name="review_date" class="form-control" value="<%= @ecommerce_review.try(:review_date) %>">
+  </div>
+
+  <!-- Label and input for review_rating -->
+  <div class="form-group">
+    <label for="review_rating">
+      Review rating
+    </label>
+
+    <input type="text" id="review_rating" name="review_rating" class="form-control" value="<%= @ecommerce_review.try(:review_rating) %>">
+  </div>
+
+  <!-- Label and input for review_text -->
+  <div class="form-group">
+    <label for="review_text">
+      Review text
+    </label>
+
+    <input type="text" id="review_text" name="review_text" class="form-control" value="<%= @ecommerce_review.try(:review_text) %>">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create ecommerce review
+  </button>
+</form>
+
+<hr>
+
+<a href="/ecommerce_reviews">
+  Go back
+</a>

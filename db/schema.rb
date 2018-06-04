@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180221161615) do
+ActiveRecord::Schema.define(version: 20180531200047) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -41,6 +41,16 @@ ActiveRecord::Schema.define(version: 20180221161615) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "ecommerce_reviews", force: :cascade do |t|
+    t.string "site_name"
+    t.string "product_number"
+    t.date "review_date"
+    t.float "review_rating"
+    t.string "review_text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
